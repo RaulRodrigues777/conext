@@ -137,10 +137,63 @@ button,input,select,textarea{font:inherit}.page{min-height:100vh;background:radi
 
   function prevStep(){ setStep(currentStep - 1); }
 
-  function finishJourney(){
-    if(finish){
-      finish.classList.remove('hidden');
-      finish.scrollIntoView({behavior:'smooth', block:'start'});
+  async function finishJourney(){
+    if(!form || form.dataset.sent === 'true'){
+      if(finish){
+        finish.classList.remove('hidden');
+        finish.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+      return;
+    }
+
+    const submitButtons = Array.from(document.querySelectorAll('[data-action="finish"]'));
+    const originalLabels = submitButtons.map(button => button.textContent);
+    submitButtons.forEach(button => {
+      button.disabled = true;
+      button.textContent = 'Enviando cadastro...';
+    });
+
+    try {
+      const payload = {};
+      const formData = new FormData(form);
+
+      for(const [key, value] of formData.entries()){
+        if(Object.prototype.hasOwnProperty.call(payload, key)){
+          payload[key] = Array.isArray(payload[key])
+            ? [...payload[key], value]
+            : [payload[key], value];
+        } else {
+          payload[key] = value;
+        }
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      payload.utm_source = params.get('utm_source') || '';
+      payload.utm_medium = params.get('utm_medium') || '';
+      payload.utm_campaign = params.get('utm_campaign') || '';
+      payload.pagina = window.location.href;
+      payload.consentimento = 'Sim';
+
+      await fetch('https://script.google.com/macros/s/AKfycbxZg7uUo-Gdw7XsmklBgX2PsGlfNLR9gYXWA0VjvhVfM8txR3Qq2S_8ofkqdcYgWc_rvQ/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type': 'text/plain;charset=utf-8'},
+        body: JSON.stringify(payload)
+      });
+
+      form.dataset.sent = 'true';
+
+      if(finish){
+        finish.classList.remove('hidden');
+        finish.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    } catch(error) {
+      console.error('Erro ao enviar cadastro:', error);
+      alert('Não foi possível enviar seu cadastro. Verifique sua conexão e tente novamente.');
+      submitButtons.forEach((button, index) => {
+        button.disabled = false;
+        button.textContent = originalLabels[index];
+      });
     }
   }
 
@@ -162,7 +215,10 @@ button,input,select,textarea{font:inherit}.page{min-height:100vh;background:radi
   });
 
   if(form){
-    form.addEventListener('submit', function(e){ e.preventDefault(); });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      finishJourney();
+    });
   }
 
   // Guarantee initial state even if classes were changed by editing.
