@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 310" role="img" aria-labelledby="title desc">
+<title id="title">CO NEXT LASER</title><desc id="desc">Marca CO NEXT LASER — conectando você à sua próxima tecnologia</desc>
+<defs><linearGradient id="copper" x1="0" x2="1"><stop stop-color="#A96747"/><stop offset=".48" stop-color="#E1A47D"/><stop offset="1" stop-color="#B77350"/></linearGradient></defs>
+<g fill="none" stroke-linecap="round">
+<path d="M76 118a72 72 0 1 1 0 74" stroke="#F4EFEA" stroke-width="5"/>
+<circle cx="231" cy="155" r="72" stroke="#F4EFEA" stroke-width="5"/>
+<path d="M69 155H1073" stroke="url(#copper)" stroke-width="2"/>
+<path d="M150 155H116" stroke="#0B0A09" stroke-width="9"/>
+<path d="M303 155H344" stroke="#0B0A09" stroke-width="9"/>
+<path d="M365 216V94l84 122V94" stroke="#F4EFEA" stroke-width="5" stroke-linejoin="round"/>
+<path d="M492 94h112M492 155h95M492 216h112M492 94v122" stroke="#F4EFEA" stroke-width="5"/>
+<path d="M646 94l94 122M740 94l-94 122" stroke="#F4EFEA" stroke-width="5"/>
+<path d="M787 94h154M864 94v122" stroke="#F4EFEA" stroke-width="5"/>
+<path d="M680 155h26" stroke="#0B0A09" stroke-width="9"/>
+<g stroke="url(#copper)" stroke-width="2">
+<path d="M693 130v50M668 155h50M676 138l35 35M711 138l-35 35"/>
+</g>
+</g>
+<text x="783" y="267" fill="#F4EFEA" font-family="Montserrat,Arial,sans-serif" font-size="31" font-weight="300" letter-spacing="17">LASER</text>
+<text x="72" y="292" fill="#C88962" font-family="Montserrat,Arial,sans-serif" font-size="17" font-weight="400" letter-spacing="2.6">CONECTANDO VOCÊ À SUA PRÓXIMA TECNOLOGIA</text>
+</svg>
