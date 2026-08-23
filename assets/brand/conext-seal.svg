@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+<title id="title">Selo CO NEXT LASER</title><desc id="desc">Selo de tecnologia premium da CO NEXT LASER</desc>
+<defs><path id="top" d="M92 300a208 208 0 0 1 416 0"/><path id="bottom" d="M508 300a208 208 0 0 1-416 0"/></defs>
+<circle cx="300" cy="300" r="250" fill="none" stroke="#C88962" stroke-width="3"/>
+<circle cx="300" cy="300" r="226" fill="none" stroke="#C88962" stroke-width="1"/>
+<text fill="#F4EFEA" font-family="Montserrat,Arial,sans-serif" font-size="25" letter-spacing="5"><textPath href="#top" startOffset="50%" text-anchor="middle">TECNOLOGIA PREMIUM</textPath></text>
+<text fill="#F4EFEA" font-family="Montserrat,Arial,sans-serif" font-size="21" letter-spacing="4"><textPath href="#bottom" startOffset="50%" text-anchor="middle">CONEXÃO QUE GERA EVOLUÇÃO</textPath></text>
+<path d="M106 300H494" stroke="#C88962" stroke-width="2"/>
+<text x="300" y="286" text-anchor="middle" fill="#F4EFEA" font-family="Montserrat,Arial,sans-serif" font-size="61" font-weight="300" letter-spacing="8">CO NEXT</text>
+<text x="300" y="338" text-anchor="middle" fill="#F4EFEA" font-family="Montserrat,Arial,sans-serif" font-size="21" font-weight="300" letter-spacing="11">LASER</text>
+<g stroke="#C88962" stroke-width="2"><path d="M300 350v76M262 388h76M273 361l54 54M327 361l-54 54"/></g>
+<g fill="#C88962"><circle cx="86" cy="300" r="5"/><circle cx="514" cy="300" r="5"/></g>
+</svg>
