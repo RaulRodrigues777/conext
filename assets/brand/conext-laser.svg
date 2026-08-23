@@ -1,15 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-labelledby="t d">
-<title id="t">CO NEXT LASER</title><desc id="d">Assinatura principal CO NEXT LASER com pulso no X</desc>
+<title id="t">CO NEXT LASER</title>
+<desc id="d">Assinatura principal CO NEXT LASER com o X integrado ao wordmark e descritor centralizado</desc>
 <rect width="1200" height="330" fill="none"/>
 <g fill="#F4F0EB" font-family="Montserrat,Helvetica Neue,Arial,sans-serif" font-weight="200">
-<text x="102" y="181" font-size="150" letter-spacing="20">CO NE</text>
-<text x="894" y="181" font-size="150" letter-spacing="20">T</text>
+  <text x="180" y="181" font-size="150" letter-spacing="14">CO NE</text>
+  <text x="852" y="181" font-size="150" letter-spacing="14">T</text>
 </g>
 <g fill="none" stroke-linecap="round">
-<path d="M780 65L890 190M890 65L780 190" stroke="#F4F0EB" stroke-width="4"/>
-<path d="M835 104v42M814 125h42M820 110l30 30M850 110l-30 30" stroke="#D0926B" stroke-width="2"/>
+  <path d="M737 68L837 188M837 68L737 188" stroke="#F4F0EB" stroke-width="4"/>
+  <path d="M787 106v40M767 126h40M773 112l28 28M801 112l-28 28" stroke="#D0926B" stroke-width="2"/>
 </g>
-<text x="735" y="244" fill="#F4F0EB" font-family="Montserrat,Helvetica Neue,Arial,sans-serif" font-size="31" font-weight="300" letter-spacing="17">LASER</text>
-<path d="M101 276H1099" stroke="#D0926B" stroke-width="1"/>
+<text x="724" y="244" text-anchor="middle" fill="#F4F0EB" font-family="Montserrat,Helvetica Neue,Arial,sans-serif" font-size="31" font-weight="300" letter-spacing="15">LASER</text>
+<path d="M180 276H1020" stroke="#D0926B" stroke-width="1"/>
 <text x="600" y="310" text-anchor="middle" fill="#D0926B" font-family="Montserrat,Helvetica Neue,Arial,sans-serif" font-size="17" font-weight="300" letter-spacing="2.7">CONECTANDO VOCÊ À SUA PRÓXIMA TECNOLOGIA</text>
 </svg>
