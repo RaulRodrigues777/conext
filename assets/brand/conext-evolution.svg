@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 760" role="img" aria-labelledby="title desc">
+<title id="title">Evolução da conexão até o infinito</title><desc id="desc">Cinco estágios mostram C e O aproximando-se, conectando-se, cruzando-se e formando o infinito</desc>
+<rect width="1800" height="760" rx="34" fill="#0A0908"/>
+<text x="90" y="105" fill="#C88962" font-family="Montserrat,Arial,sans-serif" font-size="22" letter-spacing="7">A NARRATIVA DA MARCA</text>
+<text x="90" y="170" fill="#F4EFEA" font-family="Montserrat,Arial,sans-serif" font-size="50" font-weight="300">Da origem ao infinito</text>
+<path d="M90 205H1710" stroke="#2B2622"/>
+<g font-family="Montserrat,Arial,sans-serif">
+<g transform="translate(90 260)"><text fill="#C88962" font-size="18" letter-spacing="3">01 · DUAS ORIGENS</text><path d="M30 180a76 76 0 1 1 0 76M250 180a76 76 0 1 1 0 76" fill="none" stroke="#F4EFEA" stroke-width="4"/></g>
+<g transform="translate(430 260)"><text fill="#C88962" font-size="18" letter-spacing="3">02 · APROXIMAÇÃO</text><path d="M25 180a76 76 0 1 1 0 76M190 180a76 76 0 1 1 0 76" fill="none" stroke="#F4EFEA" stroke-width="4"/><path d="M103 218h31" stroke="#C88962" stroke-width="2"/></g>
+<g transform="translate(770 260)"><text fill="#C88962" font-size="18" letter-spacing="3">03 · CONEXÃO</text><path d="M15 218c55-105 130-105 185 0s130 105 185 0" fill="none" stroke="#F4EFEA" stroke-width="4"/><path d="M15 218c55 105 130 105 185 0s130-105 185 0" fill="none" stroke="#C88962" stroke-width="3"/></g>
+<g transform="translate(1190 260)"><text fill="#C88962" font-size="18" letter-spacing="3">04 · CRUZAMENTO</text><path d="M0 218c50-90 115-90 165 0s115 90 165 0" fill="none" stroke="#F4EFEA" stroke-width="4"/><path d="M0 218c50 90 115 90 165 0s115-90 165 0" fill="none" stroke="#C88962" stroke-width="3"/><g stroke="#C88962"><path d="M165 185v66M132 218h66"/></g></g>
+<g transform="translate(1520 260)"><text fill="#C88962" font-size="18" letter-spacing="3">05 · INFINITO</text><path d="M0 218c45-82 105-82 150 0s105 82 150 0c-45-82-105-82-150 0S45 300 0 218Z" fill="none" stroke="#F4EFEA" stroke-width="4"/><path d="M150 188v60M120 218h60M129 197l42 42M171 197l-42 42" stroke="#C88962" stroke-width="2"/></g>
+<text x="900" y="650" text-anchor="middle" fill="#F4EFEA" font-size="30" font-weight="300" letter-spacing="2">Duas origens. Um encontro. Infinitas possibilidades.</text>
+<text x="900" y="700" text-anchor="middle" fill="#C88962" font-size="17" letter-spacing="4">CO NEXT LASER · CONECTANDO VOCÊ À SUA PRÓXIMA TECNOLOGIA</text>
+</g></svg>
