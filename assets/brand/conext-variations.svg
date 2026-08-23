@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 900" role="img" aria-labelledby="t d">
+<title id="t">Quatro variações da marca CO NEXT</title><desc id="d">Variações A, B, C e D da assinatura CO NEXT com linha de conexão, pulso central e selo</desc>
+<rect width="1800" height="900" fill="#050505"/>
+<defs>
+<g id="word">
+<text x="0" y="0" fill="#F4F0EB" font-family="Montserrat,Helvetica Neue,Arial,sans-serif" font-size="106" font-weight="200" letter-spacing="15">CO NE</text>
+<text x="504" y="0" fill="#F4F0EB" font-family="Montserrat,Helvetica Neue,Arial,sans-serif" font-size="106" font-weight="200" letter-spacing="15">T</text>
+<path d="M420-85l76 96M496-85l-76 96" fill="none" stroke="#F4F0EB" stroke-width="3"/>
+<g fill="none" stroke="#D0926B" stroke-width="1.5"><path d="M458-55v46M435-32h46M442-48l32 32M474-48l-32 32"/></g>
+</g>
+</defs>
+<g fill="#D0926B" font-family="Montserrat,Arial,sans-serif" font-size="28"><text x="90" y="110">A</text><text x="950" y="110">B</text><text x="90" y="505">C</text><text x="950" y="505">D</text></g>
+<g stroke="#D0926B"><path d="M82 130h40M942 130h40M82 525h40M942 525h40"/></g>
+<!-- A: linha atravessa toda a assinatura -->
+<g transform="translate(130 290)"><use href="#word"/><path d="M-45-32H625" stroke="#D0926B" stroke-width="2"/></g>
+<!-- B: linha nasce no C e termina no X -->
+<g transform="translate(990 290)"><use href="#word"/><circle cx="32" cy="-32" r="6" fill="#D0926B"/><path d="M32-32H458" stroke="#D0926B" stroke-width="2"/></g>
+<!-- C: assinatura limpa -->
+<g transform="translate(130 685)"><use href="#word"/></g>
+<!-- D: assinatura + selo -->
+<g transform="translate(950 685) scale(.72)"><use href="#word"/><path d="M-35-32H575" stroke="#D0926B" stroke-width="2"/><path d="M610-125v170" stroke="#D0926B" stroke-width="2"/>
+<g transform="translate(790 -40)"><circle r="130" fill="none" stroke="#D0926B" stroke-width="3"/><circle r="120" fill="none" stroke="#D0926B" stroke-width="1.5"/><text x="0" y="-8" text-anchor="middle" fill="#F4F0EB" font-family="Montserrat,Arial,sans-serif" font-size="37" font-weight="200" letter-spacing="5">CO NEXT</text><path d="M-78 13H78" stroke="#D0926B"/><g stroke="#D0926B"><path d="M0 0v28M-14 14h28M-10 4l20 20M10 4l-20 20"/></g>
+<path d="M92.0 0.0L108.0 0.0" stroke="#D0926B" stroke-width="2"/><path d="M88.9 23.8L104.3 28.0" stroke="#D0926B" stroke-width="2"/><path d="M79.7 46.0L93.5 54.0" stroke="#D0926B" stroke-width="2"/><path d="M65.1 65.1L76.4 76.4" stroke="#D0926B" stroke-width="2"/><path d="M46.0 79.7L54.0 93.5" stroke="#D0926B" stroke-width="2"/><path d="M23.8 88.9L28.0 104.3" stroke="#D0926B" stroke-width="2"/><path d="M0.0 92.0L0.0 108.0" stroke="#D0926B" stroke-width="2"/><path d="M-23.8 88.9L-28.0 104.3" stroke="#D0926B" stroke-width="2"/><path d="M-46.0 79.7L-54.0 93.5" stroke="#D0926B" stroke-width="2"/><path d="M-65.1 65.1L-76.4 76.4" stroke="#D0926B" stroke-width="2"/><path d="M-79.7 46.0L-93.5 54.0" stroke="#D0926B" stroke-width="2"/><path d="M-88.9 23.8L-104.3 28.0" stroke="#D0926B" stroke-width="2"/><path d="M-92.0 0.0L-108.0 0.0" stroke="#D0926B" stroke-width="2"/><path d="M-88.9 -23.8L-104.3 -28.0" stroke="#D0926B" stroke-width="2"/><path d="M-79.7 -46.0L-93.5 -54.0" stroke="#D0926B" stroke-width="2"/><path d="M-65.1 -65.1L-76.4 -76.4" stroke="#D0926B" stroke-width="2"/><path d="M-46.0 -79.7L-54.0 -93.5" stroke="#D0926B" stroke-width="2"/><path d="M-23.8 -88.9L-28.0 -104.3" stroke="#D0926B" stroke-width="2"/><path d="M-0.0 -92.0L-0.0 -108.0" stroke="#D0926B" stroke-width="2"/><path d="M23.8 -88.9L28.0 -104.3" stroke="#D0926B" stroke-width="2"/><path d="M46.0 -79.7L54.0 -93.5" stroke="#D0926B" stroke-width="2"/><path d="M65.1 -65.1L76.4 -76.4" stroke="#D0926B" stroke-width="2"/><path d="M79.7 -46.0L93.5 -54.0" stroke="#D0926B" stroke-width="2"/><path d="M88.9 -23.8L104.3 -28.0" stroke="#D0926B" stroke-width="2"/></g></g>
+</svg>
