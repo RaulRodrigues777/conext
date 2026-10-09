@@ -107,6 +107,7 @@
     .modal p{line-height:1.55;color:#beafa6}
     .question{margin-top:28px}
     .question label.title{display:block;font-size:14px;color:#f1e6dc;margin-bottom:12px}
+    .question-note{display:block;margin-top:-4px;color:#948980;font-size:12px;line-height:1.45}
     .choices{display:grid;gap:9px}
     .choice{width:100%;padding:15px 17px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.035);color:#e7dbd2;text-align:left;transition:.2s}
     .choice:hover,.choice.selected{border-color:var(--copper);background:rgba(215,131,90,.11)}
@@ -270,12 +271,13 @@
       <div class="step" data-step="2" hidden>
         <div class="step-count">Etapa 2 de 3</div><h3>Qual é sua experiência?</h3><p>Isso nos ajuda a preparar uma abordagem mais adequada.</p>
         <div class="question"><label class="title">Você já alugou este equipamento?</label><div class="choices" id="experienceChoices"><button class="choice" data-value="first">Não, será minha primeira experiência com este equipamento</button><button class="choice" data-value="returning">Sim, já aluguei antes e estou realizando novos orçamentos</button></div></div>
+        <div class="question" id="currentPriceQuestion" hidden><label class="title" for="currentPriceInput">Se você se sentir à vontade, quanto costuma pagar atualmente?</label><span class="question-note">Essa informação é opcional e nos ajuda a buscar uma condição realmente competitiva para você.</span><input class="field" id="currentPriceInput" placeholder="Ex.: R$ 1,70 por disparo ou R$ 1.200 a diária" inputmode="decimal"></div>
         <div class="modal-actions"><button class="back" data-back="1">Voltar</button><button class="next" data-next="3">Continuar</button></div>
       </div>
       <div class="step" data-step="3" hidden>
         <div class="step-count">Etapa 3 de 3</div><h3>Quando e onde?</h3><p>Falta pouco para abrir sua conversa no WhatsApp.</p>
         <div class="question"><label class="title">Quando pretende realizar a locação?</label><div class="choices" id="timingChoices"><button class="choice" data-value="Nos próximos 7 dias">Nos próximos 7 dias</button><button class="choice" data-value="Nos próximos 15 dias">Nos próximos 15 dias</button><button class="choice" data-value="Ainda estou pesquisando">Ainda estou pesquisando</button></div></div>
-        <div class="question"><label class="title" for="cityInput">Cidade da clínica</label><input class="field" id="cityInput" placeholder="Ex.: Santo André - SP" autocomplete="address-level2"></div>
+        <div class="question"><label class="title" for="cityInput">Em qual cidade e bairro fica sua clínica?</label><input class="field" id="cityInput" placeholder="Ex.: Santo André, Bairro Jardim - SP" autocomplete="street-address"></div>
         <div class="summary" id="messagePreview"></div>
         <div class="modal-actions"><button class="back" data-back="2">Voltar</button><button class="next" id="openWhatsApp"><span class="wa-icon"><svg aria-hidden="true"><use href="#icon-whatsapp"/></svg></span> Enviar no WhatsApp</button></div>
       </div>
@@ -285,16 +287,18 @@
   <script>
     /* Insira aqui o número oficial com DDI + DDD, apenas dígitos. Ex.: 5511999999999 */
     const WHATSAPP_NUMBER = "5511991787873";
-    const state={equipments:[],experience:"",timing:"",city:""};
+    const state={equipments:[],experience:"",currentPrice:"",timing:"",city:""};
     const attribution=(()=>{const params=new URLSearchParams(location.search);return{source:params.get('utm_source')||'',campaign:params.get('utm_campaign')||'',adset:params.get('utm_term')||'',ad:params.get('utm_content')||''}})();
     const modal=document.getElementById('budgetModal');
     const steps=[...document.querySelectorAll('.step')];
     const equipmentChoices=document.getElementById('equipmentChoices');
+    const currentPriceQuestion=document.getElementById('currentPriceQuestion');
+    const currentPriceInput=document.getElementById('currentPriceInput');
     const cityInput=document.getElementById('cityInput');
     const preview=document.getElementById('messagePreview');
     function showStep(n){steps.forEach(s=>s.hidden=Number(s.dataset.step)!==n);if(n===3)updateMessage()}
     function renderEquipmentChoices(){equipmentChoices.querySelectorAll('.choice').forEach(button=>button.classList.toggle('selected',state.equipments.includes(button.dataset.value)))}
-    function openModal(equipment){state.equipments=equipment?[equipment]:[];state.experience='';state.timing='';state.city='';cityInput.value='';document.querySelectorAll('#experienceChoices .choice,#timingChoices .choice').forEach(button=>button.classList.remove('selected'));renderEquipmentChoices();modal.classList.add('open');document.body.style.overflow='hidden';showStep(1)}
+    function openModal(equipment){state.equipments=equipment?[equipment]:[];state.experience='';state.currentPrice='';state.timing='';state.city='';currentPriceInput.value='';currentPriceQuestion.hidden=true;cityInput.value='';document.querySelectorAll('#experienceChoices .choice,#timingChoices .choice').forEach(button=>button.classList.remove('selected'));renderEquipmentChoices();modal.classList.add('open');document.body.style.overflow='hidden';showStep(1)}
     function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}
     document.querySelectorAll('.js-budget').forEach(btn=>btn.addEventListener('click',()=>openModal(btn.dataset.equipment)));
     document.getElementById('closeModal').addEventListener('click',closeModal);
@@ -308,11 +312,12 @@
     document.querySelectorAll('[data-back]').forEach(btn=>btn.addEventListener('click',()=>showStep(Number(btn.dataset.back))));
     function selectChoice(container,value,button){state[value]=button.dataset.value;container.querySelectorAll('.choice').forEach(b=>b.classList.toggle('selected',b===button));if(value==='timing')updateMessage()}
     equipmentChoices.addEventListener('click',e=>{const b=e.target.closest('.choice');if(!b)return;const value=b.dataset.value;state.equipments=state.equipments.includes(value)?state.equipments.filter(item=>item!==value):[...state.equipments,value];renderEquipmentChoices()});
-    const experienceChoices=document.getElementById('experienceChoices');experienceChoices.addEventListener('click',e=>{const b=e.target.closest('.choice');if(b)selectChoice(experienceChoices,'experience',b)});
+    const experienceChoices=document.getElementById('experienceChoices');experienceChoices.addEventListener('click',e=>{const b=e.target.closest('.choice');if(!b)return;selectChoice(experienceChoices,'experience',b);currentPriceQuestion.hidden=state.experience!=='returning';if(state.experience!=='returning'){state.currentPrice='';currentPriceInput.value=''}});
     const timingChoices=document.getElementById('timingChoices');timingChoices.addEventListener('click',e=>{const b=e.target.closest('.choice');if(b)selectChoice(timingChoices,'timing',b)});
     cityInput.addEventListener('input',updateMessage);
+    currentPriceInput.addEventListener('input',updateMessage);
     function formatList(items){if(items.length<2)return items[0]||'';return `${items.slice(0,-1).join(', ')} e ${items.at(-1)}`}
-    function buildMessage(){state.city=cityInput.value.trim();const plural=state.equipments.length>1;const experience=state.experience==='first'?(plural?'seria minha primeira experiência com esses equipamentos.':'seria minha primeira experiência com este equipamento.'):'já aluguei antes e estou realizando novos orçamentos.';let msg=`Olá, vim pelo site da CO NEXT LASER e gostaria de solicitar um orçamento personalizado para ${formatList(state.equipments)}. ${experience}`;if(state.timing)msg+=` Pretendo realizar a locação: ${state.timing.toLowerCase()}.`;if(state.city)msg+=` Minha clínica fica em ${state.city}.`;const reference=[attribution.source&&`origem: ${attribution.source}`,attribution.campaign&&`campanha: ${attribution.campaign}`,attribution.adset&&`conjunto: ${attribution.adset}`,attribution.ad&&`anúncio: ${attribution.ad}`].filter(Boolean).join(' | ');if(reference)msg+=` Referência do anúncio: ${reference}.`;return msg}
+    function buildMessage(){state.city=cityInput.value.trim();state.currentPrice=currentPriceInput.value.trim();const plural=state.equipments.length>1;const experience=state.experience==='first'?(plural?'seria minha primeira experiência com esses equipamentos.':'seria minha primeira experiência com este equipamento.'):'já aluguei antes e estou realizando novos orçamentos.';let msg=`Olá, vim pelo site da CO NEXT LASER e gostaria de solicitar um orçamento personalizado para ${formatList(state.equipments)}. ${experience}`;if(state.experience==='returning'&&state.currentPrice)msg+=` Atualmente costumo pagar ${state.currentPrice}.`;if(state.timing)msg+=` Pretendo realizar a locação: ${state.timing.toLowerCase()}.`;if(state.city)msg+=` Minha clínica fica em ${state.city}.`;const reference=[attribution.source&&`origem: ${attribution.source}`,attribution.campaign&&`campanha: ${attribution.campaign}`,attribution.adset&&`conjunto: ${attribution.adset}`,attribution.ad&&`anúncio: ${attribution.ad}`].filter(Boolean).join(' | ');if(reference)msg+=` Referência do anúncio: ${reference}.`;return msg}
     function updateMessage(){preview.textContent=buildMessage()}
     document.getElementById('openWhatsApp').addEventListener('click',async()=>{
       if(!state.timing){alert('Selecione quando pretende realizar a locação.');return}
