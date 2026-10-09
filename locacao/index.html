@@ -69,7 +69,8 @@
     .feature-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}
     .feature-row span{padding:9px 12px;border:1px solid rgba(255,255,255,.1);border-radius:999px;color:#a99b92;font-size:12px}
     .equipment-cta{margin-top:32px;padding:16px 21px;background:var(--cream);color:#13100e;font-weight:750;border:1px solid rgba(255,255,255,.6)}
-    .wa-icon{width:21px;height:21px;border-radius:50%;display:grid;place-items:center;background:#1faa59;color:white;font-size:13px;font-weight:900}
+    .wa-icon{width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:white;flex:0 0 23px}
+    .wa-icon svg{width:15px;height:15px;display:block;fill:currentColor}
     .device{min-height:52svh;display:grid;place-items:center;position:relative}
     .device:before{content:"";position:absolute;width:76%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(242,177,139,.12);box-shadow:0 0 80px rgba(215,131,90,.13),inset 0 0 80px rgba(215,131,90,.06)}
     .device img{position:relative;z-index:1;max-width:100%;max-height:55svh;object-fit:contain;filter:drop-shadow(0 28px 40px rgba(0,0,0,.55)) drop-shadow(0 0 24px rgba(215,131,90,.14));transform:translateY(var(--parallax,0px));transition:transform .12s linear}
@@ -84,7 +85,8 @@
     .closing p{font-size:clamp(18px,2.2vw,25px);line-height:1.55;color:#cbbdb4;max-width:680px;margin:28px auto 0}
     .closing .primary{margin-top:34px}
     .closing img{display:block;width:min(520px,88%);margin:58px auto 0;border-radius:24px;mix-blend-mode:screen}
-    .floating-wa{position:fixed;right:22px;bottom:22px;z-index:45;width:58px;height:58px;border-radius:50%;border:1px solid rgba(255,255,255,.34);background:#1faa59;color:white;display:grid;place-items:center;box-shadow:0 16px 45px rgba(0,0,0,.42);font-size:23px;font-weight:900;transition:.25s}
+    .floating-wa{position:fixed;right:22px;bottom:22px;z-index:45;width:62px;height:62px;border-radius:50%;border:1px solid rgba(255,255,255,.48);background:#25d366;color:white;display:grid;place-items:center;box-shadow:0 16px 45px rgba(0,0,0,.42),0 0 0 5px rgba(37,211,102,.1);transition:.25s}
+    .floating-wa svg{width:32px;height:32px;display:block;fill:currentColor}
     .floating-wa:hover{transform:scale(1.06)}
     .modal{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:18px;background:rgba(0,0,0,.72);backdrop-filter:blur(12px)}
     .modal.open{display:grid}
@@ -119,11 +121,48 @@
       .device img{max-height:340px}.trust{padding:90px 22px}.trust-grid{grid-template-columns:1fr 1fr}
       .closing{padding:100px 22px}.floating-wa{width:54px;height:54px;right:15px;bottom:15px}
     }
-    @media(max-width:560px){.trust-grid{grid-template-columns:1fr}.hero-actions{flex-direction:column;align-items:stretch}.primary,.secondary{text-align:center}.feature-row span{font-size:11px}.equipment-cta{width:100%}.brand-mini{letter-spacing:.13em}}
+    @media(max-width:560px){
+      .topbar{top:12px;width:calc(100% - 24px);padding:7px 8px 7px 14px}
+      .brand-mini{font-size:10px;letter-spacing:.12em;white-space:nowrap;gap:7px}
+      .nav-cta{max-width:51%;padding:10px 11px;font-size:9px;line-height:1.15;text-align:center}
+      .hero{padding:96px 18px 62px;text-align:center}
+      .hero-inner,.intro-inner,.equipment-card{justify-items:center;width:100%}
+      .hero-logo{width:100%;min-height:300px}
+      .hero-logo img{width:min(100%,390px);margin-inline:auto}
+      .eyebrow{justify-content:center;font-size:10px;line-height:1.5;letter-spacing:.18em}
+      h1{font-size:clamp(42px,12.2vw,58px);line-height:.92;letter-spacing:-.06em;max-width:100%;overflow-wrap:break-word}
+      h2{font-size:clamp(38px,10.8vw,52px);line-height:.98;max-width:100%;overflow-wrap:break-word}
+      h3{font-size:clamp(38px,11vw,50px);line-height:.98;max-width:100%;overflow-wrap:break-word}
+      .hero p,.intro p,.catalog-head p,.equipment-copy p{margin-inline:auto}
+      .hero-actions{width:100%;flex-direction:column;align-items:stretch}
+      .primary,.secondary{text-align:center;width:100%}
+      .intro{padding:82px 20px;text-align:center}
+      .intro-inner{gap:24px}
+      .catalog-head{padding:76px 20px 36px;text-align:center}
+      .equipment{padding:22px 12px}
+      .equipment-card{padding:30px 18px 24px;text-align:center;border-radius:26px}
+      .equipment-copy{width:100%;min-width:0}
+      .equipment-index{font-size:10px;line-height:1.55;letter-spacing:.18em}
+      .feature-row{justify-content:center}
+      .feature-row span{font-size:11px}
+      .equipment-cta{width:100%;padding-inline:14px}
+      .device{width:100%;min-height:310px}
+      .device img{max-width:100%;margin-inline:auto}
+      .trust{padding:82px 20px;text-align:center}
+      .trust-grid{grid-template-columns:1fr}
+      .closing{padding:86px 20px;text-align:center}
+      .floating-wa{width:58px;height:58px;right:14px;bottom:max(14px,env(safe-area-inset-bottom))}
+      .floating-wa svg{width:30px;height:30px}
+    }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none;filter:none}.device img{transform:none!important}}
   </style>
 </head>
 <body>
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.9 6.989c-.002 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.14 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+    </symbol>
+  </svg>
   <div class="progress" id="progress"></div>
   <header class="topbar">
     <a class="brand-mini" href="#inicio"><i></i> CO NEXT LASER</a>
@@ -164,35 +203,35 @@
 
       <section class="equipment" id="ultraformer-mpt" data-name="Ultraformer MPT">
         <article class="equipment-card reveal">
-          <div class="equipment-copy"><div class="equipment-index">01 · Ultrassom micro e macrofocado</div><h3>Ultraformer MPT</h3><p>Tecnologia versátil para ampliar protocolos e criar uma experiência premium para seus pacientes.</p><div class="feature-row"><span>Locação personalizada</span><span>Suporte</span><span>Logística</span></div><button class="equipment-cta js-budget" data-equipment="Ultraformer MPT"><span class="wa-icon">↗</span> Quero garantir minha condição</button></div>
+          <div class="equipment-copy"><div class="equipment-index">01 · Ultrassom micro e macrofocado</div><h3>Ultraformer MPT</h3><p>Tecnologia versátil para ampliar protocolos e criar uma experiência premium para seus pacientes.</p><div class="feature-row"><span>Locação personalizada</span><span>Suporte</span><span>Logística</span></div><button class="equipment-cta js-budget" data-equipment="Ultraformer MPT"><span class="wa-icon"><svg aria-hidden="true"><use href="#icon-whatsapp"/></svg></span> Quero garantir minha condição</button></div>
           <div class="device"><img src="assets/ultraformer-mpt.jpg" alt="Equipamento Ultraformer MPT" loading="lazy"></div>
         </article>
       </section>
 
       <section class="equipment" id="ultraformer-iii" data-name="Ultraformer III">
         <article class="equipment-card reveal">
-          <div class="equipment-copy"><div class="equipment-index">02 · Ultrassom micro e macrofocado</div><h3>Ultraformer III</h3><p>Uma tecnologia consolidada para clínicas que desejam ampliar possibilidades com segurança operacional.</p><div class="feature-row"><span>Condições sob medida</span><span>Operação assistida</span><span>Agenda planejada</span></div><button class="equipment-cta js-budget" data-equipment="Ultraformer III"><span class="wa-icon">↗</span> Quero garantir minha condição</button></div>
+          <div class="equipment-copy"><div class="equipment-index">02 · Ultrassom micro e macrofocado</div><h3>Ultraformer III</h3><p>Uma tecnologia consolidada para clínicas que desejam ampliar possibilidades com segurança operacional.</p><div class="feature-row"><span>Condições sob medida</span><span>Operação assistida</span><span>Agenda planejada</span></div><button class="equipment-cta js-budget" data-equipment="Ultraformer III"><span class="wa-icon"><svg aria-hidden="true"><use href="#icon-whatsapp"/></svg></span> Quero garantir minha condição</button></div>
           <div class="device"><img src="assets/ultraformer-iii.jpg" alt="Equipamento Ultraformer III" loading="lazy"></div>
         </article>
       </section>
 
       <section class="equipment" id="co2-fracionado" data-name="CO₂ Fracionado Hegon">
         <article class="equipment-card reveal">
-          <div class="equipment-copy"><div class="equipment-index">03 · Laser fracionado</div><h3>CO₂ Hegon</h3><p>Leve novas possibilidades à clínica com uma locação organizada para o seu projeto, workshop ou agenda de procedimentos.</p><div class="feature-row"><span>Workshops</span><span>Locação por período</span><span>Suporte técnico</span></div><button class="equipment-cta js-budget" data-equipment="CO₂ Fracionado Hegon"><span class="wa-icon">↗</span> Quero garantir minha condição</button></div>
+          <div class="equipment-copy"><div class="equipment-index">03 · Laser fracionado</div><h3>CO₂ Hegon</h3><p>Leve novas possibilidades à clínica com uma locação organizada para o seu projeto, workshop ou agenda de procedimentos.</p><div class="feature-row"><span>Workshops</span><span>Locação por período</span><span>Suporte técnico</span></div><button class="equipment-cta js-budget" data-equipment="CO₂ Fracionado Hegon"><span class="wa-icon"><svg aria-hidden="true"><use href="#icon-whatsapp"/></svg></span> Quero garantir minha condição</button></div>
           <div class="device"><img src="assets/co2-fracionado.jpg" alt="Equipamento de CO₂ fracionado Hegon" loading="lazy"></div>
         </article>
       </section>
 
       <section class="equipment" id="lavieen" data-name="Lavieen">
         <article class="equipment-card reveal">
-          <div class="equipment-copy"><div class="equipment-index">04 · Laser de Thulium</div><h3>Lavieen</h3><p>Uma tecnologia desejada para ações especiais e dias de atendimento que valorizam a experiência do paciente.</p><div class="feature-row"><span>Datas especiais</span><span>Logística coordenada</span><span>Atendimento próximo</span></div><button class="equipment-cta js-budget" data-equipment="Lavieen"><span class="wa-icon">↗</span> Quero garantir minha condição</button></div>
+          <div class="equipment-copy"><div class="equipment-index">04 · Laser de Thulium</div><h3>Lavieen</h3><p>Uma tecnologia desejada para ações especiais e dias de atendimento que valorizam a experiência do paciente.</p><div class="feature-row"><span>Datas especiais</span><span>Logística coordenada</span><span>Atendimento próximo</span></div><button class="equipment-cta js-budget" data-equipment="Lavieen"><span class="wa-icon"><svg aria-hidden="true"><use href="#icon-whatsapp"/></svg></span> Quero garantir minha condição</button></div>
           <div class="device"><img src="assets/lavieen.jpg" alt="Equipamento Lavieen" loading="lazy"></div>
         </article>
       </section>
 
       <section class="equipment" id="soprano-platinum" data-name="Soprano Ice Platinum">
         <article class="equipment-card reveal">
-          <div class="equipment-copy"><div class="equipment-index">05 · Depilação a laser</div><h3>Soprano Ice Platinum</h3><p>Uma experiência reconhecida para clínicas que desejam oferecer depilação a laser com apoio operacional.</p><div class="feature-row"><span>Agenda de atendimentos</span><span>Logística</span><span>Suporte</span></div><button class="equipment-cta js-budget" data-equipment="Soprano Ice Platinum"><span class="wa-icon">↗</span> Quero garantir minha condição</button></div>
+          <div class="equipment-copy"><div class="equipment-index">05 · Depilação a laser</div><h3>Soprano Ice Platinum</h3><p>Uma experiência reconhecida para clínicas que desejam oferecer depilação a laser com apoio operacional.</p><div class="feature-row"><span>Agenda de atendimentos</span><span>Logística</span><span>Suporte</span></div><button class="equipment-cta js-budget" data-equipment="Soprano Ice Platinum"><span class="wa-icon"><svg aria-hidden="true"><use href="#icon-whatsapp"/></svg></span> Quero garantir minha condição</button></div>
           <div class="device"><img src="assets/soprano-platinum.jpg" alt="Equipamento Soprano Ice Platinum" loading="lazy"></div>
         </article>
       </section>
@@ -207,7 +246,7 @@
     </section>
   </main>
 
-  <button class="floating-wa js-budget" data-equipment="" aria-label="Solicitar orçamento pelo WhatsApp">↗</button>
+  <button class="floating-wa js-budget" data-equipment="" aria-label="Solicitar orçamento pelo WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"/></svg></button>
 
   <div class="modal" id="budgetModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-card">
@@ -227,7 +266,7 @@
         <div class="question"><label class="title">Quando pretende realizar a locação?</label><div class="choices" id="timingChoices"><button class="choice" data-value="Nos próximos 7 dias">Nos próximos 7 dias</button><button class="choice" data-value="Nos próximos 15 dias">Nos próximos 15 dias</button><button class="choice" data-value="Ainda estou pesquisando">Ainda estou pesquisando</button></div></div>
         <div class="question"><label class="title" for="cityInput">Cidade da clínica</label><input class="field" id="cityInput" placeholder="Ex.: Santo André - SP" autocomplete="address-level2"></div>
         <div class="summary" id="messagePreview"></div>
-        <div class="modal-actions"><button class="back" data-back="2">Voltar</button><button class="next" id="openWhatsApp"><span class="wa-icon">↗</span> Enviar no WhatsApp</button></div>
+        <div class="modal-actions"><button class="back" data-back="2">Voltar</button><button class="next" id="openWhatsApp"><span class="wa-icon"><svg aria-hidden="true"><use href="#icon-whatsapp"/></svg></span> Enviar no WhatsApp</button></div>
       </div>
     </div>
   </div>
