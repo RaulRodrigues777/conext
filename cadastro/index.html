@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0c0b09">
+  <meta name="description" content="Seu primeiro passo com a CO NEXT Laser. Cadastre sua clínica e escolha as tecnologias que deseja alugar.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Seu próximo passo | Cadastro CO NEXT Laser</title>
+  <link rel="stylesheet" href="/cadastro/style.css">
+  <script src="/cadastro/app.js" defer></script>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="topbar"><a href="/locacao/" aria-label="CO NEXT Laser, conhecer equipamentos"><img src="/locacao/assets/logo-dark.png" alt="CO NEXT Laser"></a><span>PRIMEIRA RESERVA <i></i></span></header>
+  <main>
+    <section class="intro" aria-labelledby="introTitle">
+      <p class="availability" id="availability" role="status" hidden>O cadastro online está em preparação. Por enquanto, <a href="https://wa.me/5511991787873">fale com a equipe pelo WhatsApp ↗</a>.</p>
+      <div class="eyebrow"><span></span> UMA NOVA CONEXÃO COMEÇA AQUI</div>
+      <h1 id="introTitle">Sua clínica.<br>Seu próximo <em>nível.</em></h1>
+      <p>Conecte sua agenda às tecnologias que você quer oferecer. Conte um pouco sobre sua clínica e vamos preparar os próximos passos da sua primeira locação.</p>
+      <a class="button primary" href="#cadastro">Começar meu cadastro <span aria-hidden="true">↗</span></a>
+      <div class="intro-meta"><span>01 / Cadastro</span><span>02 / Alinhamento</span><span>03 / Sua próxima tecnologia</span></div>
+      <div class="intro-foot"><span>Conectando você à sua próxima tecnologia.</span><span class="scroll-hint">DESLIZE PARA COMEÇAR ↓</span></div>
+    </section>
+
+    <section class="journey" id="cadastro" aria-labelledby="formTitle">
+      <aside class="journey-aside">
+        <span class="eyebrow">O PRÓXIMO PASSO É SEU</span>
+        <h2 id="formTitle">Vamos conhecer<br><em>sua clínica.</em></h2>
+        <p>Um cadastro, novas possibilidades. Seus dados ajudam nossa equipe a organizar atendimento e logística.</p>
+        <ol class="step-nav" aria-label="Etapas do cadastro"><li class="current" aria-current="step"><b>01</b><span>Você e sua clínica<small>Vamos nos apresentar</small></span></li><li><b>02</b><span>Suas tecnologias<small>Escolha o que faz sentido</small></span></li><li><b>03</b><span>Dados cadastrais<small>Para organizar sua locação</small></span></li><li><b>04</b><span>Estrutura e revisão<small>Quase tudo pronto</small></span></li></ol>
+        <div class="aside-note"><span aria-hidden="true">✦</span> O envio do cadastro não confirma a reserva. Nossa equipe alinhará condições e disponibilidade com você.</div>
+      </aside>
+
+      <div class="form-shell">
+        <div class="form-top"><span id="stepLabel">ETAPA 01 DE 04</span><span id="stepPercent">25%</span></div><div class="progress-track" role="progressbar" aria-label="Progresso do cadastro" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25"><span id="progressFill"></span></div>
+        <form id="registration" novalidate>
+          <div class="trap" aria-hidden="true"><label>Deixe em branco<input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <section class="form-step" data-step="0" aria-labelledby="title0">
+            <div class="step-heading"><span class="kicker">PRAZER EM CONHECER VOCÊ</span><h3 id="title0" tabindex="-1">Toda conexão começa<br>com um nome.</h3><p>Como podemos falar com você? Campos com * são obrigatórios.</p></div>
+            <div class="fields"><label class="wide">Seu nome completo *<input name="nome" required minlength="3" maxlength="120" autocomplete="name" placeholder="Como você se chama?"></label><label>Telefone / WhatsApp *<input name="whatsapp" required inputmode="tel" type="tel" maxlength="20" autocomplete="tel" placeholder="(11) 99999-9999"></label><label>Seu cargo *<select name="cargo" required><option value="Proprietário(a)">Proprietário(a)</option><option>Gestor(a)</option><option>Profissional / Aplicador(a)</option><option>Administrativo / Recepção</option><option>Outro</option></select></label><label>E-mail *<input name="email" type="email" required maxlength="160" autocomplete="email" placeholder="voce@clinica.com.br"></label><label>Instagram da clínica <span class="optional">opcional</span><input name="instagram" maxlength="100" autocapitalize="none" placeholder="@suaclinica"></label></div>
+          </section>
+
+          <section class="form-step" data-step="1" hidden aria-labelledby="title1">
+            <div class="step-heading"><span class="kicker">TECNOLOGIA QUE MOVE SUA AGENDA</span><h3 id="title1" tabindex="-1">O que você quer<br>levar para sua clínica?</h3><p>Selecione um ou mais equipamentos de interesse. *</p></div>
+            <div class="equipment-grid" id="equipmentGrid">
+              <label class="equipment"><input type="checkbox" name="equipamentos" value="Ultraformer MPT"><span class="equipment-visual"><img src="/locacao/assets/ultraformer-mpt.jpg" alt="Ultraformer MPT" loading="lazy"><span class="check" aria-hidden="true">✓</span></span><span class="equipment-info"><small>ULTRASSOM MICRO E MACROFOCADO</small><strong>Ultraformer MPT</strong><span>Selecionar tecnologia <i aria-hidden="true">↗</i></span></span></label>
+              <label class="equipment"><input type="checkbox" name="equipamentos" value="Ultraformer III"><span class="equipment-visual"><img src="/locacao/assets/ultraformer-iii.jpg" alt="Ultraformer III" loading="lazy"><span class="check" aria-hidden="true">✓</span></span><span class="equipment-info"><small>ULTRASSOM MICRO E MACROFOCADO</small><strong>Ultraformer III</strong><span>Selecionar tecnologia <i aria-hidden="true">↗</i></span></span></label>
+              <label class="equipment"><input type="checkbox" name="equipamentos" value="CO₂ Fracionado Hegon"><span class="equipment-visual"><img src="/locacao/assets/co2-fracionado.jpg" alt="CO₂ Fracionado Hegon" loading="lazy"><span class="check" aria-hidden="true">✓</span></span><span class="equipment-info"><small>LASER FRACIONADO</small><strong>CO₂ Hegon</strong><span>Selecionar tecnologia <i aria-hidden="true">↗</i></span></span></label>
+              <label class="equipment"><input type="checkbox" name="equipamentos" value="Lavieen"><span class="equipment-visual"><img src="/locacao/assets/lavieen.jpg" alt="Lavieen" loading="lazy"><span class="check" aria-hidden="true">✓</span></span><span class="equipment-info"><small>LASER DE THULIUM</small><strong>Lavieen</strong><span>Selecionar tecnologia <i aria-hidden="true">↗</i></span></span></label>
+              <label class="equipment"><input type="checkbox" name="equipamentos" value="Soprano Ice Platinum"><span class="equipment-visual"><img src="/locacao/assets/soprano-platinum.jpg" alt="Soprano Ice Platinum" loading="lazy"><span class="check" aria-hidden="true">✓</span></span><span class="equipment-info"><small>DEPILAÇÃO A LASER</small><strong>Soprano Ice Platinum</strong><span>Selecionar tecnologia <i aria-hidden="true">↗</i></span></span></label>
+            </div><p class="selection-count" id="selectionCount" aria-live="polite">Nenhuma tecnologia selecionada</p>
+          </section>
+
+          <section class="form-step" data-step="2" hidden aria-labelledby="title2">
+            <div class="step-heading"><span class="kicker">OS DETALHES FAZEM A DIFERENÇA</span><h3 id="title2" tabindex="-1">Tudo organizado.<br>Desde o início.</h3><p>Informe os dados de quem ficará responsável pela locação.</p></div>
+            <div class="fields"><label class="wide">Razão social / Nome do responsável *<input name="razao_social" required minlength="3" maxlength="180" autocomplete="organization" placeholder="Razão social ou nome completo, se pessoa física"></label><label class="wide">CPF / CNPJ *<input name="documento" required minlength="11" maxlength="18" autocapitalize="characters" placeholder="CPF ou CNPJ do responsável pela locação"><small class="field-note">Usado para identificação cadastral e preparação da locação.</small></label><label>CEP *<input name="cep" required inputmode="numeric" maxlength="9" autocomplete="postal-code" placeholder="00000-000"></label><label>Estado *<select name="uf" required autocomplete="address-level1"><option value="SP">São Paulo</option><option value="AC">Acre</option><option value="AL">Alagoas</option><option value="AP">Amapá</option><option value="AM">Amazonas</option><option value="BA">Bahia</option><option value="CE">Ceará</option><option value="DF">Distrito Federal</option><option value="ES">Espírito Santo</option><option value="GO">Goiás</option><option value="MA">Maranhão</option><option value="MT">Mato Grosso</option><option value="MS">Mato Grosso do Sul</option><option value="MG">Minas Gerais</option><option value="PA">Pará</option><option value="PB">Paraíba</option><option value="PR">Paraná</option><option value="PE">Pernambuco</option><option value="PI">Piauí</option><option value="RJ">Rio de Janeiro</option><option value="RN">Rio Grande do Norte</option><option value="RS">Rio Grande do Sul</option><option value="RO">Rondônia</option><option value="RR">Roraima</option><option value="SC">Santa Catarina</option><option value="SE">Sergipe</option><option value="TO">Tocantins</option></select></label><label class="wide">Rua / Avenida *<input name="logradouro" required maxlength="180" autocomplete="address-line1" placeholder="Endereço onde será realizado o atendimento"></label><label>Número *<input name="numero" required maxlength="20" placeholder="123 ou S/N"></label><label>Complemento <span class="optional">opcional</span><input name="complemento" maxlength="120" autocomplete="address-line2" placeholder="Sala, andar, bloco..."></label><label>Bairro *<input name="bairro" required maxlength="100" placeholder="Bairro da clínica"></label><label>Cidade *<input name="cidade" required maxlength="100" autocomplete="address-level2" placeholder="Cidade da clínica"></label></div>
+          </section>
+
+          <section class="form-step" data-step="3" hidden aria-labelledby="title3">
+            <div class="step-heading"><span class="kicker">QUASE PRONTO PARA O PRÓXIMO PASSO</span><h3 id="title3" tabindex="-1">Como é a estrutura<br>do seu espaço?</h3><p>Essas informações ajudam no planejamento da entrega e da operação.</p></div>
+            <fieldset><legend>Há tomada / instalação 220V disponível? *</legend><div class="segmented"><label><input type="radio" name="energia_220v" value="Sim" required><span>Sim</span></label><label><input type="radio" name="energia_220v" value="Não" required><span>Não</span></label><label><input type="radio" name="energia_220v" value="Preciso verificar" required><span>Vou verificar</span></label></div></fieldset>
+            <fieldset><legend>O local possui ar-condicionado? *</legend><div class="segmented"><label><input type="radio" name="ar_condicionado" value="Sim" required><span>Sim</span></label><label><input type="radio" name="ar_condicionado" value="Não" required><span>Não</span></label><label><input type="radio" name="ar_condicionado" value="Preciso verificar" required><span>Vou verificar</span></label></div></fieldset>
+            <label class="notes">Algo que devemos saber? <span class="optional">opcional</span><textarea name="observacoes" rows="3" maxlength="1000" placeholder="Acesso ao local, data desejada ou outra informação importante."></textarea></label>
+            <div class="review"><div class="review-head"><span>SEU CADASTRO, EM RESUMO</span><button type="button" id="reviewEdit">Revisar dados ↗</button></div><dl id="reviewData"></dl></div>
+            <label class="consent"><input type="checkbox" name="consentimento" value="Sim" required><span>Autorizo a CO NEXT a usar estes dados para meu cadastro, contato e organização da locação. Li o <button type="button" class="text-link" id="privacyOpen">aviso de privacidade</button>. *</span></label>
+            <p class="final-note">Este é um cadastro de interesse. A reserva depende de disponibilidade e confirmação com nossa equipe.</p>
+          </section>
+          <p class="form-error" id="formError" role="alert" hidden></p>
+          <div class="form-actions"><button class="button back" id="previous" type="button" hidden>← Voltar</button><button class="button primary" id="next" type="button">Continuar <span aria-hidden="true">→</span></button><button class="button primary" id="submit" type="submit" hidden>Enviar meu cadastro <span aria-hidden="true">↗</span></button></div>
+          <p class="privacy-note">Seus dados não ficam expostos nesta página.</p>
+        </form>
+        <section class="success" id="success" hidden aria-labelledby="successTitle"><div class="success-mark" aria-hidden="true">✓</div><span class="kicker">CONEXÃO FEITA</span><h3 id="successTitle" tabindex="-1">Seu próximo passo<br>começa agora.</h3><p>Cadastro recebido! Nossa equipe vai alinhar condições, disponibilidade e logística com você.</p><p class="protocol" id="protocol"></p><a class="button primary" id="successWhatsApp" href="https://wa.me/5511991787873" target="_blank" rel="noopener">Conversar no WhatsApp ↗</a><p class="final-note">Sua reserva será confirmada no atendimento.</p></section>
+        <noscript><p>Ative o JavaScript para preencher o cadastro em etapas, ou <a href="https://wa.me/5511991787873">fale com nossa equipe pelo WhatsApp</a>.</p></noscript>
+      </div>
+    </section>
+  </main>
+  <footer><span>CO NEXT LASER</span><p>Conectando você à sua próxima tecnologia.</p><a href="https://wa.me/5511991787873" target="_blank" rel="noopener">Precisa de ajuda? Fale com a gente ↗</a></footer>
+  <dialog id="privacy"><button type="button" id="privacyClose" aria-label="Fechar aviso de privacidade">×</button><span class="kicker">SEUS DADOS</span><h2>Privacidade com clareza.</h2><p>A CO NEXT recebe os dados informados neste formulário para cadastrar seu interesse, entrar em contato e organizar os próximos passos da locação.</p><p>Os dados são registrados na base operacional CONEXT. O envio utiliza serviços de hospedagem Vercel e armazenamento Google. O formulário não solicita dados de pacientes, cartões ou senhas.</p><p>Para solicitar correção ou exclusão, entre em contato pelo WhatsApp <a href="https://wa.me/5511991787873">(11) 99178-7873</a>. O cadastro não implica recebimento obrigatório de publicidade nem confirmação de reserva.</p></dialog>
+</body>
+</html>
