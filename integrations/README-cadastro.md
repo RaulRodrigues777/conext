@@ -4,7 +4,7 @@ Página: `/cadastro/`. Fonte padrão: `Lead MPT`. Para outro canal, use `?canal=
 
 ## Destino e modelo de dados
 
-Mesmo arquivo Google Sheets `CO NEXT | Banco de Dados` (ID `1M-9pr0B05qTjayLIRE-dwxdM4FLI3NC6CTITN3TWgi0`). O novo receptor cria a aba `📝 11 | Cadastros` com campos completos e adiciona o lead à aba existente `📈 10 | CRM`, por nome dos cabeçalhos. Não altera cadastros anteriores, não escreve na aba de clínicas, não marca reserva confirmada e não substitui o receptor do workshop.
+Mesmo arquivo Google Sheets `CO NEXT | Banco de Dados` (ID `1M-9pr0B05qTjayLIRE-dwxdM4FLI3NC6CTITN3TWgi0`). O novo receptor cria a aba `📝 11 | Cadastros` com campos completos e adiciona o lead à aba existente `📈 10 | CRM`, por nome dos cabeçalhos. Também adiciona os campos operacionais à aba `🏥 04 | Clínicas Parceiras`, com status `Aguardando validação`, tipo `Clínica/Cliente` e fonte `Cadastro pelo site | <protocolo>`. Confere CPF/CNPJ (sem pontuação) OU telefone (sem pontuação e prefixo 55) e não insere outra clínica nem sobrescreve registros existentes quando houver correspondência. Não marca reserva confirmada e não substitui o receptor do workshop.
 
 O formulário só mostra sucesso após resposta positiva do receptor e um ID de cadastro válido. Até a configuração abaixo, a API responde 503, e a página oferece atendimento no WhatsApp sem alegar que salvou os dados. Não usar o endpoint antigo do workshop como substituto: ele descarta os novos campos e fixa a campanha Workshop CO₂.
 
@@ -20,6 +20,10 @@ Não prometer coleta operacional até esse teste real. O único teste realizado 
 
 ## Proteção e operação
 
-Chave compartilhada fica exclusivamente nos servidores. Validação no servidor e no receptor, limite de tamanho, honeypot, verificação de origem e proteção de fórmulas. Idempotência por UUID com lock de script; em falha parcial, o reenvio completa o CRM sem duplicar o cadastro. Revisar registros repetidos por CPF/telefone no fluxo comercial, sem sobrescrever clientes existentes automaticamente.
+Chave compartilhada fica exclusivamente nos servidores. Validação no servidor e no receptor, limite de tamanho, honeypot, verificação de origem e proteção de fórmulas. Idempotência por UUID com lock de script; em falha parcial, o reenvio completa o CRM sem duplicar o cadastro. Contatos compartilhados ou dados divergentes que correspondam por CPF/telefone ficam no cadastro completo e CRM para revisão comercial, sem sobrescrever clientes existentes.
 
 Sem endpoint de leitura pública. Não registrar payloads contendo documentos. O token é restrito a este receptor; se comprometido, rotacionar em Apps Script e Vercel. Não conectar notificações a clientes automaticamente.
+
+## Atualizar receptor existente para versão 2
+
+Substituir todo o código no MESMO projeto Apps Script, salvar e usar Implantar > Gerenciar implantações > lápis > Versão: Nova versão > Implantar. Manter a implantação, URL e propriedade `CONEXT_CADASTRO_TOKEN`. Não precisa alterar Vercel. O GET da URL `/exec` deve mostrar `versao: 2`. Testar um novo cadastro e conferir as três abas; enviar outra solicitação com o mesmo documento ou telefone deve manter uma única clínica e preservar seus dados. Cadastros já recebidos não são importados retroativamente por esta atualização.
